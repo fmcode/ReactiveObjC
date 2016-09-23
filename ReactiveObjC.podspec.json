@@ -1,0 +1,39 @@
+{
+    "name": "ReactiveObjC",
+    "version": "2.5",
+    "summary": "A framework for composing and transforming streams of values.",
+    "homepage": "https://github.com/blog/1107-reactivecocoa-is-now-open-source",
+    "authors": {
+        "Josh Abernathy": "josh@github.com"
+    },
+    "source": {
+        "git": "https://github.com/fmcode/ReactiveObjC.git",
+        "tag": "v2.5"
+    },
+    "license": {
+        "type": "MIT",
+        "file": "LICENSE.md"
+    },
+    "description": "ReactiveObjC (RAC) is an Objective-C framework for Functional Reactive Programming. It provides APIs for composing and transforming streams of values.",
+    "requires_arc": true,
+    "platforms": {
+        "ios": "6.0",
+        "osx": "10.8"
+    },
+    "subspecs": [{
+        "name": "Core",
+        "source_files": [
+            "ReactiveObjC/*.{d,h,m}",
+            "ReactiveObjC/extobjc/*.{h,m}"
+        ],
+		"osx": {
+            "exclude_files": "ReactiveObjC/*{UI,MK}*"
+        },
+        "ios": {
+            "exclude_files": "ReactiveObjC/*{AppKit,NSControl,NSText}*"
+        },
+        "private_header_files": [
+            "ReactiveObjC/*Private.h"
+        ]
+    }]
+}
